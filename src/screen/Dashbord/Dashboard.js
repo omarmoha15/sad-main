@@ -66,8 +66,8 @@ class DashboardPage extends React.Component {
   
       const geotechnicalFilterCondition =
         geotechnicalFilter === 'all' ||
-        (geotechnicalFilter === 'yes' && item.Geotechnical === 1) ||
-        (geotechnicalFilter === 'no' && item.Geotechnical === 0);
+        (geotechnicalFilter === 'yes' && item.i_security === 1) ||
+        (geotechnicalFilter === 'no' && item.i_security === 0);
   
       const typeFilterCondition =
         typeFilter === 'all' || item.type.trim().toLowerCase() === typeFilter.trim().toLowerCase();
@@ -79,7 +79,6 @@ class DashboardPage extends React.Component {
       return searchFilter && sirensFilterCondition && geotechnicalFilterCondition && typeFilterCondition && purposeFilterCondition;
     });
   };
-  
 
   render() {
     const filteredSade = this.filterSade();
@@ -102,38 +101,34 @@ class DashboardPage extends React.Component {
           </div>
 
           <div className="filter-bar" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
-  {[
-    { id: 'sirens-filter', label: 'صافرات الانذار', state: this.state.sirensFilter, handler: this.handleSirensFilterChange },
-    { id: 'geotechnical-filter', label: 'الأجهزة الجيوتقنية', state: this.state.geotechnicalFilter, handler: this.handleGeotechnicalFilterChange },
-    { id: 'type-filter', label: 'نوع السد', state: this.state.typeFilter, handler: this.handleTypeFilterChange },
-    { id: 'purpose-filter', label: 'الغرض من', state: this.state.purposeFilter, handler: this.handlePurposeFilterChange },
-  ].map((filter) => (
-    <div key={filter.id} style={{ margin: '5px', textAlign: 'center' }}>
-      <label htmlFor={filter.id}>{filter.label}:</label>
-      <select
-        id={filter.id}
-        value={filter.state}
-        onChange={filter.handler}
-      >
-        <option value="all">الكل</option>
-        {filter.label === 'نوع السد' ? (
-          <>
-            <option value="خرساني">خرساني</option>
-            <option value="ترابي">ترابي</option>
-            <option value="ركامي">ركامي</option>
-            <option value="جوفي">جوفي</option>
-          </>
-        ) : (
-          <>
-            <option value="yes">موجودة</option>
-            <option value="no">غير موجودة</option>
-          </>
-        )}
-      </select>
-    </div>
-  ))}
-</div>
-
+            {[
+              { id: 'sirens-filter', label: 'صافرات الانذار', state: this.state.sirensFilter, handler: this.handleSirensFilterChange },
+              { id: 'geotechnical-filter', label: 'الحمايه ', state: this.state.geotechnicalFilter, handler: this.handleGeotechnicalFilterChange },
+              { id: 'type-filter', label: 'نوع السد', state: this.state.typeFilter, handler: this.handleTypeFilterChange },
+              { id: 'purpose-filter', label: 'الغرض من', state: this.state.purposeFilter, handler: this.handlePurposeFilterChange, options: ['الكل', 'استعاضة', 'حماية', 'للشرب'] },
+            ].map((filter) => (
+              <div key={filter.id} style={{ margin: '5px', textAlign: 'center' }}>
+                <label htmlFor={filter.id}>{filter.label}:</label>
+                <select
+                  id={filter.id}
+                  value={filter.state}
+                  onChange={filter.handler}
+                >
+                  <option value="all">الكل</option>
+                  {filter.options ? (
+                    filter.options.map((option) => (
+                      <option key={option} value={option}>{option}</option>
+                    ))
+                  ) : (
+                    <>
+                      <option value="yes">موجودة</option>
+                      <option value="no">غير موجودة</option>
+                    </>
+                  )}
+                </select>
+              </div>
+            ))}
+          </div>
 
           <div className="cards">
             {filteredSade.map((item) => (

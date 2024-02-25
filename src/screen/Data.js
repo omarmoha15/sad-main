@@ -76,6 +76,10 @@ import mohzam from '../iamge/sheet2/mohzam.png'
 import wadidaf from '../iamge/sheet2/wadidaf.png'
 import farha from '../iamge/sheet2/farha.png'
 import abugadaa from '../iamge/sheet2/abugadaa.png'
+import dafaa from '../iamge/sheet2/dafaa.png'
+import thabt from '../iamge/sheet2/thabt.png'
+import gilan from '../iamge/sheet2/gilan.png'
+import eifaa from '../iamge/sheet2/eifaa.png'
 
 
 
@@ -112,6 +116,11 @@ import kder from '../iamge/sheet3/kder.png'
 import foha from '../iamge/sheet3/foha.png'
 import shibana from '../iamge/sheet3/shibana.png'
 import king from '../iamge/sheet3/king.png'
+import bnugis from '../iamge/sheet3/bnugis.png'
+import trjs from '../iamge/sheet3/trjs.png'
+import shot from '../iamge/sheet3/shot.png'
+import ubh from '../iamge/sheet3/ubh.png'
+import tbalh from '../iamge/sheet3/tbalh.png'
 
 
 
@@ -1181,7 +1190,7 @@ const Sade = [
         "d_name": "الغيالن",
         "governorate": "احد رفيده",
         "id": "49",
-        "photo": "",
+        "photo": gilan,
         "spillyway_h": 150,
       },
       {
@@ -1250,7 +1259,7 @@ const Sade = [
         "d_name": "ال عيفه",
         "governorate": "ظهران الجنوب",
         "id": "52",
-        "photo": "",
+        "photo": eifaa,
         "spillyway_h": 115,
       },
       {
@@ -1480,7 +1489,7 @@ const Sade = [
         "d_name": "الثابت",
         "governorate": "ظهران الجنوب",
         "id": "63",
-        "photo": "",
+        "photo": thabt,
         "spillyway_h": 120,
       },
       {
@@ -1641,7 +1650,7 @@ const Sade = [
         "d_name": "الدافعه",
         "governorate": "ظهران الجنوب",
         "id": "70",
-        "photo": "",
+        "photo": dafaa,
         "spillyway_h": 43,
       },
       {
@@ -2032,7 +2041,7 @@ const Sade = [
         "d_name": "بني قيس",
         "governorate": "المجاردة",
         "id": "87",
-        "photo": "",
+        "photo": bnugis,
         "spillyway_h": 120,
       },
       {
@@ -2055,7 +2064,7 @@ const Sade = [
         "d_name": "باشوت",
         "governorate": "بللقرن",
         "id": "88",
-        "photo": "",
+        "photo": shot,
         "spillyway_h": 250,
       },
       {
@@ -2699,7 +2708,7 @@ const Sade = [
         "d_name": "ترجس",
         "governorate": "النماص",
         "id": "116",
-        "photo": "",
+        "photo": trjs,
         "spillyway_h": 184,
       },
       {
@@ -2722,7 +2731,7 @@ const Sade = [
         "d_name": "تبالة",
         "governorate": "بيشة",
         "id": "117",
-        "photo": "",
+        "photo": tbalh,
         "spillyway_h": 420,
       },
       {
@@ -2791,7 +2800,7 @@ const Sade = [
         "d_name": "يبة",
         "governorate": "بارق",
         "id": "120",
-        "photo": "",
+        "photo": ubh,
         "spillyway_h": 234,
       },
       {
