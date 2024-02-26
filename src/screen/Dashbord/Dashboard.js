@@ -89,8 +89,8 @@ class DashboardPage extends React.Component {
         <div className='container'>
           <div className="header" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: 0 }}>
             <img style={{ margin: 0 }} src={Logo} alt='' className='logo' />
-            <p style={{ margin: 0 }}> فرع وزارة البيئة والمياه والزراعة بمنطقة عسير</p>
-            <p style={{ margin: 0 }}> ادارة التشغيل والصيانه / السدود</p>
+            <h1 style={{ margin: 0 , color : '#200F61'}}> فرع وزارة البيئة والمياه والزراعة بمنطقة عسير</h1>
+  <h2 style={{ margin: 0 , color : '#200F61'}}> ادارة التشغيل والصيانه / السدود</h2>
           </div>
 
           <div className="">

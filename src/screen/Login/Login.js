@@ -70,8 +70,8 @@ function Login() {
     <div className="container">
           <div className="header" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: 0 }}>
   <img style={{ margin: 0 }} src={Logo} alt='' className='logo' />
-  <p style={{ margin: 0 }}> فرع وزارة البيئة والمياه والزراعة بمنطقة عسير</p>
-  <p style={{ margin: 0 }}> ادارة التشغيل والصيانه / السدود</p>
+  <h1 style={{ margin: 0 , color : '#200F61'}}> فرع وزارة البيئة والمياه والزراعة بمنطقة عسير</h1>
+  <h2 style={{ margin: 0 , color : '#200F61'}}> ادارة التشغيل والصيانه / السدود</h2>
 </div>
       {/* <div className="form-container sign-up">
         <form onSubmit={handleSignUp}>
@@ -83,7 +83,7 @@ function Login() {
           <button type="submit">تأكيد </button>
         </form>
       </div> */}
-      <div className="form-container sign-up">
+      <div className="form-container sign-up" style={{ margin: 40 }}>
         <form onSubmit={handleSignIn}>
           <h1>تسجيل الدخول </h1>
           <span>ادخل البريد الالكتروني وكملة المرور    </span>
