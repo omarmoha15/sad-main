@@ -68,10 +68,11 @@ function Login() {
 
   return (
     <div className="container">
-       <div className="header" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',}}>
-          
-          <img src={Logo} alt='' className='logo' />
-        </div>
+          <div className="header" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: 0 }}>
+  <img style={{ margin: 0 }} src={Logo} alt='' className='logo' />
+  <p style={{ margin: 0 }}> فرع وزارة البيئة والمياه والزراعة بمنطقة عسير</p>
+  <p style={{ margin: 0 }}> ادارة التشغيل والصيانه / السدود</p>
+</div>
       {/* <div className="form-container sign-up">
         <form onSubmit={handleSignUp}>
           <h1>انشاء حساب</h1>

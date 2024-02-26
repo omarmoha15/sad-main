@@ -16,7 +16,7 @@ const DetailsPage = ({ data }) => {
     photo,
     governorate,
     d_name,
-    Purpose,
+    purpose,
     type,
     length,
     high,
@@ -62,9 +62,11 @@ const DetailsPage = ({ data }) => {
 
   return (
     <div className='container'>
-      <div className="header" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}> 
-        <img src={Logo} alt='' className='logo' />
-      </div>
+      <div className="header" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: 0 }}>
+  <img style={{ margin: 0 }} src={Logo} alt='' className='logo' />
+  <p style={{ margin: 0 }}> فرع وزارة البيئة والمياه والزراعة بمنطقة عسير</p>
+  <p style={{ margin: 0 }}> ادارة التشغيل والصيانه / السدود</p>
+</div>
       <h2>تفاصيل السد</h2>
       <div className='container' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
         <div style={imageStyle}>
@@ -73,7 +75,7 @@ const DetailsPage = ({ data }) => {
         <div className="card-body">
           <p><strong>المحافظة:</strong> {governorate}</p>
           <p><strong>اسم السد:</strong> {d_name}</p>
-          <p><strong>الغرض:</strong> {Purpose}</p>
+          <p><strong>الغرض:</strong> {purpose}</p>
           <p><strong>نوع السد:</strong> {type}</p>
           <p><strong>الطول:</strong> {length}</p>
           <p><strong>الارتفاع:</strong> {high}</p>

@@ -40,6 +40,7 @@ class DashboardPage extends React.Component {
       geotechnicalFilter: event.target.value,
     });
   };
+  
 
   handleTypeFilterChange = (event) => {
     this.setState({
@@ -64,17 +65,17 @@ class DashboardPage extends React.Component {
       const sirensFilterCondition =
         sirensFilter === 'all' || (sirensFilter === 'yes' && item.Sirens === 1) || (sirensFilter === 'no' && item.Sirens === 0);
   
-      const geotechnicalFilterCondition =
+        const geotechnicalFilterCondition =
         geotechnicalFilter === 'all' ||
-        (geotechnicalFilter === 'yes' && item.i_security === 1) ||
-        (geotechnicalFilter === 'no' && item.i_security === 0);
-  
+        (geotechnicalFilter === 'yes' && (item.Geotechnical === 1 || item.geotechnical === 1)) || // Include dams with geotechnical devices
+        (geotechnicalFilter === 'no' && (item.Geotechnical === 0 && item.geotechnical === 0));
       const typeFilterCondition =
         typeFilter === 'all' || item.type.trim().toLowerCase() === typeFilter.trim().toLowerCase();
   
       // Check if 'purpose' exists before applying the filter condition
       const purposeFilterCondition =
         purposeFilter === 'all' || (item.purpose && item.purpose.trim().toLowerCase() === purposeFilter.trim().toLowerCase());
+
   
       return searchFilter && sirensFilterCondition && geotechnicalFilterCondition && typeFilterCondition && purposeFilterCondition;
     });
@@ -86,8 +87,10 @@ class DashboardPage extends React.Component {
     return (
       <>
         <div className='container'>
-          <div className="header" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <img src={Logo} alt='' className='logo' />
+          <div className="header" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: 0 }}>
+            <img style={{ margin: 0 }} src={Logo} alt='' className='logo' />
+            <p style={{ margin: 0 }}> فرع وزارة البيئة والمياه والزراعة بمنطقة عسير</p>
+            <p style={{ margin: 0 }}> ادارة التشغيل والصيانه / السدود</p>
           </div>
 
           <div className="">
@@ -103,7 +106,7 @@ class DashboardPage extends React.Component {
           <div className="filter-bar" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
             {[
               { id: 'sirens-filter', label: 'صافرات الانذار', state: this.state.sirensFilter, handler: this.handleSirensFilterChange },
-              { id: 'geotechnical-filter', label: 'الحمايه ', state: this.state.geotechnicalFilter, handler: this.handleGeotechnicalFilterChange },
+              { id: 'geotechnical-filter', label: 'الأجهزة الجيوتقنية', state: this.state.geotechnicalFilter, handler: this.handleGeotechnicalFilterChange },
               { id: 'type-filter', label: 'نوع السد', state: this.state.typeFilter, handler: this.handleTypeFilterChange },
               { id: 'purpose-filter', label: 'الغرض من', state: this.state.purposeFilter, handler: this.handlePurposeFilterChange, options: ['الكل', 'استعاضة', 'حماية', 'للشرب'] },
             ].map((filter) => (
